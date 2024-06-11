@@ -1,0 +1,50 @@
+.gemini-loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.gemini-loader div {
+    border-radius: 10px;
+    width: 80%;
+    height: 20px;
+    position: relative;
+    background: linear-gradient(to right, #007bff, #00d4ff);
+    overflow: hidden;
+}
+
+.gemini-loader div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0.5;
+    animation: gemini 1.2s ease-in-out infinite;
+}
+
+.gemini-loader div:nth-child(1)::before {
+    animation-delay: 0s;
+}
+
+.gemini-loader div:nth-child(2)::before {
+    animation-delay: 0.4s;
+}
+
+.gemini-loader div:nth-child(3)::before {
+    animation-delay: 0.8s;
+}
+
+@keyframes gemini {
+
+    0%,
+    100% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+}
